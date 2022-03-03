@@ -7,18 +7,34 @@ def add_to_address():
             address = input("Please enter the address: ")
             number = input("Please enter the phone number: ")
             new_person = {"First Name": first, "Last Name": last, "Address": address, "Number": number}
-            address_book[first] = new_person
+
+            if first in address_book.keys():
+                if address_book[first]["Last Name"] == last:
+                    user_continue = input("Name already exists, do you wand to override? (Y/N) ")
+                    if user_continue.title() == "Y":
+                        address_book[first]['Address'] = address
+                        address_book[first]['Number'] = number
+                    else: 
+                        continue
+            else:    
+                address_book[first] = new_person
         else:
             break
     pass
 
 def print_address_book(book):
     for person in book:
-        print(f"First name: {book[person]['First Name']} \nLast Name: {book[person]['Last Name']} \nAddress: {book[person]['Address']} \nNumber: {book[person]['Number']}")
-    pass
+        print(f"""        ================
+        First name: {book[person]['First Name']}
+        Last Name: {book[person]['Last Name']}
+        Address: {book[person]['Address']}
+        Number: {book[person]['Number']}
+        ================""")
 
 
-address_book = {}
+address_book = {'Bob': 
+                    {'First Name': 'Bob', 'Last Name': 'Bobbert', 'Address': '123asdf', 'Number': '1112223333'}
+                    }
 
 add_to_address()
 print_address_book(address_book)
