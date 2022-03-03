@@ -28,13 +28,10 @@ def print_address_book(book):
         First name: {book[person]['First Name']}
         Last Name: {book[person]['Last Name']}
         Address: {book[person]['Address']}
-        Number: {book[person]['Number']}
-        ================""")
+        Number: {book[person]['Number']}""")
 
 
-address_book = {'Bob': 
-                    {'First Name': 'Bob', 'Last Name': 'Bobbert', 'Address': '123asdf', 'Number': '1112223333'}
-                    }
+address_book = {}
 
 add_to_address()
 print_address_book(address_book)
