@@ -32,7 +32,6 @@ def add_to_address():
                 address_book[first] = new_person
         else:
             break
-    pass
 
 def print_address_book(book):
     for person in book:
